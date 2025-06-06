@@ -1,0 +1,17 @@
+\ifdefined \isprintable
+\else
+    \documentclass[
+        10pt,       % fontsize
+        oneside,    % symmetric pagination, for digital view
+        a4paper,
+        english,
+        italian,
+    ]{book}
+    \newcommand{\isprintable}{0}
+\fi
+
+\input{config/packages}
+
+\input{config/thesis-config}
+
+\input{structure}
