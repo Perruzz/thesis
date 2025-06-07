@@ -1,21 +1,279 @@
 % Acronyms
-\newacronym[description={\glslink{apig}{Application Program Interface}}]
-    {api}{API}{Application Program Interface}
+%A
+\newacronym[description={\glslink{awafg}{Advanced Web Application Firewall}}]
+    {awaf}{AWAF}{Advanced Web Application Firewall}
 
+%B
+
+%C
+\newacronym[description={\glslink{csrfg}{Cross-Site Request Forgery}}]
+    {csrf}{CSRF}{Cross-Site Request Forgery}
+
+%D
+\newacronym[description={\glslink{dosg}{Denial of Service}}]
+    {dos}{DoS}{Denial of Service}
+
+%E
+
+%F
+
+%G
+
+%H
+\newacronym[description={\glslink{htmlg}{HyperText Markup Language}}]
+    {html}{HTML}{HyperText Markup Language}
+\newacronym[description={\glslink{httpg}{HyperText Transfer Protocol}}]
+    {http}{HTTP}{HyperText Transfer Protocol}
+\newacronym[description={\glslink{httpsg}{HyperText Transfer Protocol Secure}}]
+    {https}{HTTPS}{HTTP Secure}
+
+%I
+
+%J
+\newacronym[description={\glslink{jsg}{JavaScript}}]
+    {js}{JS}{JavaScript}
+
+%K
+
+%L
+
+%M
+
+%N
+
+%O
+\newacronym[description={\glslink{owaspg}{Open Worldwide Application Security Project}}]
+    {owasp}{OWASP}{Open Worldwide Application Security Project}
+
+%P
+
+%Q
+
+%R
+
+%S
+\newacronym[description={\glslink{sqlg}{Structured Query Language}}]
+    {sql}{SQL}{Structured Query Language}
+\newacronym[description={\glslink{sqlig}{SQL injection}}]
+    {sqli}{SQLi}{SQL injection}
+
+%T
+
+%U
 \newacronym[description={\glslink{umlg}{Unified Modeling Language}}]
     {uml}{UML}{Unified Modeling Language}
 
+%V
+\newacronym[description={\glslink{vmg}{Virtual Machine}}]
+    {vm}{VM}{Virtual Machine}
+
+%W
+\newacronym[description={\glslink{wafg}{Web Application Firewall}}]
+    {waf}{WAF}{Web Application Firewall}
+\newacronym[description={\glslink{wwwg}{World Wide Web}}]
+    {www}{WWW}{World Wide Web}
+
+%X
+\newacronym[description={\glslink{xssg}{Cross-Site Scripting}}]
+    {xss}{XSS}{Cross-Site Scripting}
+
+%Y
+
+%Z
+
 % Glossary entries
-\newglossaryentry{apig} {
-    name=\glslink{api}{API},
-    text=Application Program Interface,
-    sort=api,
-    description={in informatica con il termine \emph{Application Programming Interface API} (ing. interfaccia di programmazione di un'applicazione) si indica ogni insieme di procedure disponibili al programmatore, di solito raggruppate a formare un set di strumenti specifici per l'espletamento di un determinato compito all'interno di un certo programma. La finalità è ottenere un'astrazione, di solito tra l'hardware e il programmatore o tra software a basso e quello ad alto livello semplificando così il lavoro di programmazione}
+%A
+\newglossaryentry{awafg} {
+    name=\glslink{awaf}{AWAF},
+    text=Advanced Web Application Firewall,
+    sort=awaf,
+    description={\emph{Advanced Web Application Firewall}, soluzione di sicurezza avanzata offerta da \gls{f5} per proteggere applicazioni \emph{web} da un'ampia gamma di minacce a livello applicativo, comprese vulnerabilità note e attacchi sofisticati come \gls{bot}, \gls{xss}, \gls{sqli} e \gls{csrf}}
 }
 
+%B
+\newglossaryentry{bigip} {
+    name=BIG-IP,
+    text=BIG-IP,
+    sort=bigip,
+    description={piattaforma \emph{hardware} e \emph{software} sviluppata da \gls{f5} che offre funzionalità avanzate di bilanciamento del carico (\emph{load balancing}), sicurezza applicativa, gestione del traffico e ottimizzazione delle prestazioni delle applicazioni \emph{web}. Include moduli come \gls{awaf}}
+}
+\newglossaryentry{bot} {
+    name=Bot,
+    text=bot,
+    sort=bot,
+    description={programma automatico che effettua operazioni su \emph{Internet}. I \emph{bot} possono essere usati per scopi legittimi (ad esempio motori di ricerca) o malevoli (attacchi automatizzati, \emph{spam}). Un \gls{waf} spesso implementa meccanismi di difesa contro il traffico generato da \emph{bot} dannosi}
+}
+\newglossaryentry{bruteforce} {
+    name=Brute Force,
+    text=Brute Force,
+    sort=bruteforce,
+    description={attacco che tenta di ottenere l'accesso a un sistema o servizio provando sistematicamente tutte le combinazioni possibili di credenziali (\emph{username} e \emph{password}) o chiavi di cifratura, fino a trovare quella corretta. Le moderne difese, come i \gls{waf}, implementano meccanismi per rilevare e bloccare tali tentativi}
+}
+\newglossaryentry{burpsuite} {
+    name=Burp Suite,
+    text=Burp Suite,
+    sort=burpsuite,
+    description={suite integrata di strumenti per test di sicurezza delle applicazioni \emph{web}. Permette di eseguire analisi del traffico \gls{http}/\gls{https}, attacchi automatizzati, manipolazione di richieste e molto altro} 
+}
+
+%C
+\newglossaryentry{csrfg} {
+    name=\glslink{csrf}{CSRF},
+    text=Cross-Site Request Forgery,
+    sort=csrf,
+    description={\emph{Cross-Site Request Forgery} è una vulnerabilità delle applicazioni \emph{web} che consente a un attaccante di indurre un utente autenticato a eseguire, inconsapevolmente, azioni indesiderate su un'applicazione \emph{web} in cui è autenticato, sfruttando la fiducia dell'applicazione nei confronti del \emph{browser} dell'utente}
+}
+
+%D
+\newglossaryentry{dosg} {
+    name=\glslink{dos}{DoS},
+    text=Denial of Service,
+    sort=dos,
+    description={\emph{Denial of Service} è un attacco informatico finalizzato a rendere indisponibile un servizio, una risorsa di rete o un'intera infrastruttura, sovraccaricando i \emph{server} o saturando la banda con richieste malevole o massive}
+}
+
+%E
+
+%F
+\newglossaryentry{f5} {
+    name=F5,
+    text=F5,
+    sort=f5,
+    description={\emph{F5 Networks} è un'azienda statunitense che sviluppa soluzioni \emph{hardware} e \emph{software} per la sicurezza, la disponibilità e l'ottimizzazione delle applicazioni, tra cui i prodotti della famiglia \gls{bigip} e \gls{awaf}}
+}
+
+%G
+
+%H
+\newglossaryentry{htmlg} {
+    name=\glslink{html}{HTML},
+    text=HyperText Markup Language,
+    sort=html,
+    description={\emph{HyperText Markup Language}, linguaggio di \emph{markup} utilizzato per strutturare contenuti ipertestuali sul \gls{www}. Costituisce la base delle pagine \emph{web}, descrivendone la struttura e gli elementi visuali}
+}
+\newglossaryentry{httpg} {
+    name=\glslink{http}{HTTP},
+    text=HyperText Transfer Protocol,
+    sort=http,
+    description={\emph{HyperText Transfer Protocol}, protocollo di livello applicativo usato per la trasmissione di documenti ipertestuali (come le pagine \emph{web}) su \emph{Internet}. È il protocollo su cui si basa il \gls{www}} 
+}
+\newglossaryentry{httpsg} {
+    name=\glslink{https}{HTTPS},
+    text=HTTP Secure,
+    sort=https,
+    description={\emph{HyperText Transfer Protocol Secure}, estensione sicura di \gls{http}. \emph{HTTPS} impiega protocolli di cifratura per garantire la riservatezza e l'integrità dei dati trasmessi tra il \emph{client} e il \emph{server}}
+}
+
+%I
+
+%J
+\newglossaryentry{jsg} {
+    name=\glslink{js}{JS},
+    text=JavaScript,
+    sort=js,
+    description={\emph{JavaScript}, linguaggio di programmazione interpretato, principalmente utilizzato per lo sviluppo di funzionalità dinamiche e interattive nelle pagine \emph{web} lato \emph{client}. È uno dei linguaggi fondamentali del \gls{www} insieme a \gls{html}}
+}
+
+%K
+
+%L
+\newglossaryentry{log} {
+    name=Log,
+    text=log,
+    sort=log,
+    description={registro strutturato contenente eventi, messaggi o attività registrate da un sistema informatico. I \emph{log} sono fondamentali per il monitoraggio della sicurezza, la diagnosi di problemi e la verifica del comportamento delle applicazioni}
+}
+
+%M
+
+%N
+
+%O
+\newglossaryentry{owaspg} {
+    name=\glslink{owasp}{OWASP},
+    text=Open Worldwide Application Security Project,
+    sort=owasp,
+    description={\emph{Open Worldwide Application Security Project}, organizzazione \emph{no-profit} che promuove la sicurezza delle applicazioni \emph{web} attraverso progetti \emph{open-source}, linee guida e \emph{standard} come l'\emph{OWASP Top 10}, che elenca le vulnerabilità più critiche nelle applicazioni \emph{web}}
+}
+
+%P
+\newglossaryentry{policy} {
+    name=Policy,
+    text=policy,
+    sort=policy,
+    description={insieme di regole configurate in un sistema (ad esempio un \gls{waf}) che determinano il comportamento di protezione e le azioni da intraprendere in risposta al traffico applicativo}
+}
+
+%Q
+\newglossaryentry{query} {
+    name=Query,
+    text=query,
+    sort=query,
+    description={in informatica, una \emph{query} è una richiesta formulata per ottenere informazioni da un sistema di gestione di basi di dati o da un sistema informativo. Nel contesto del \gls{sql}, una \emph{query} rappresenta un comando per interrogare o manipolare dati contenuti in un \emph{database}}
+}
+
+%R
+
+%S
+\newglossaryentry{sqlg} {
+    name=\glslink{sql}{SQL},
+    text=Structured Query Language,
+    sort=sql,
+    description={\emph{Structured Query Language}, linguaggio \emph{standard} utilizzato per l'interrogazione, la manipolazione e la definizione di dati all'interno di un \emph{database} relazionale}
+}
+\newglossaryentry{sqlig} {
+    name=\glslink{sqli}{SQLi},
+    text=SQL injection,
+    sort=sqli,
+    description={\emph{SQL injection} è una tecnica di attacco che consiste nell'inserire comandi \gls{sql} malevoli in \emph{input} apparentemente innocui dell'applicazione, allo scopo di manipolare le \gls{query} verso il \emph{database} sottostante, accedendo, alterando o eliminando dati sensibili}
+}
+
+%T
+
+%U
+\newglossaryentry{ubuntu} {
+    name=Ubuntu,
+    text=Ubuntu,
+    sort=ubuntu,
+    description={distribuzione del sistema operativo \emph{Linux}, molto popolare per la sua semplicità d'uso e ampia comunità. È spesso utilizzata come sistema operativo per \emph{server} e \gls{vm} in ambito di sviluppo e test}
+}
 \newglossaryentry{umlg} {
     name=\glslink{uml}{UML},
-    text=UML,
+    text=Unified Modeling Language,
     sort=uml,
-    description={in ingegneria del software \emph{UML, Unified Modeling Language} (ing. linguaggio di modellazione unificato) è un linguaggio di modellazione e specifica basato sul paradigma object-oriented. L'\emph{UML} svolge un'importantissima funzione di ``lingua franca'' nella comunità della progettazione e programmazione a oggetti. Gran parte della letteratura di settore usa tale linguaggio per descrivere soluzioni analitiche e progettuali in modo sintetico e comprensibile a un vasto pubblico}
+    description={\emph{Unified Modeling Language} è un linguaggio di modellazione e specifica basato sul paradigma \emph{object-oriented}. L'\gls{UML} svolge un'importantissima funzione di ``lingua franca'' nella comunità della progettazione e programmazione a oggetti. Gran parte della letteratura di settore usa tale linguaggio per descrivere soluzioni analitiche e progettuali in modo sintetico e comprensibile a un vasto pubblico}
 }
+
+%V
+\newglossaryentry{vmg} {
+    name=\glslink{vm}{VM},
+    text=Virtual Machine,
+    sort=vm,
+    description={\emph{Virtual Machine}, macchina virtuale: un ambiente \emph{software} che emula un computer fisico, consentendo di eseguire sistemi operativi e applicazioni isolati dal sistema \emph{host}. Usata comunemente per test, sviluppo e virtualizzazione dei servizi}
+}
+
+%W
+\newglossaryentry{wafg} {
+    name=\glslink{waf}{WAF},
+    text=Web Application Firewall,
+    sort=waf,
+    description={\emph{Web Application Firewall} è un sistema di protezione che monitora, filtra e analizza il traffico \gls{http}/\gls{https} verso e da una applicazione \emph{web}, con l'obiettivo di proteggere da attacchi noti e sconosciuti come \gls{sqli}, \gls{xss}, \gls{csrf} e altri attacchi a livello applicativo}
+}
+\newglossaryentry{wwwg} {
+    name=\glslink{www}{WWW},
+    text=World Wide Web,
+    sort=www,
+    description={\emph{World Wide Web}, sistema di documenti ipertestuali interconnessi accessibili tramite \emph{Internet}. Permette agli utenti di navigare tra pagine \emph{web} tramite \emph{browser} utilizzando protocolli come \gls{http} e \gls{https}}
+}
+
+%X
+\newglossaryentry{xssg} {
+    name=\glslink{xss}{XSS},
+    text=Cross-Site Scripting,
+    sort=xss,
+    description={\emph{Cross-Site Scripting} è una tipologia di vulnerabilità delle applicazioni \emph{web} che consente a un attaccante di iniettare codice \gls{js} o \gls{html} malevolo nelle pagine visualizzate da altri utenti, con lo scopo di rubare dati sensibili, sessioni utente o manipolare il contenuto della pagina}
+}
+
+%Y
+
+%Z
