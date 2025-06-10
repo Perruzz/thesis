@@ -1,6 +1,73 @@
-\chapter{Processi e metodologie}
+\chapter{Descrizione dello stage}
 \label{cap:descrizione-stage}
 
-\intro{Brevissima 1introduzione al capitolo}\\
+\intro{Questo capitolo descrive più in dettaglio come si è svolto lo stage, la metodologia di lavoro adottata e il rapporto con l'azienda e con il tutor aziendale. Vengono inoltre analizzati i principali rischi individuati e gli obiettivi definiti in fase di pianificazione.}\\
 
-\section{Processo sviluppo prodotto}
+\section{Introduzione al progetto} 
+
+L'obiettivo principale del progetto è stato quello di progettare e configurare un \gls{awaf} in grado di proteggere una \emph{Web Application} server da attacchi noti e sconosciuti. In particolare, ci si è concentrati sulla protezione da minacce quali \gls{sqli}, \gls{xss}, \gls{csrf}, attacchi di \gls{bruteforce} e da \gls{bot} malevoli.
+
+Il progetto è stato suddiviso in due macro-fasi:
+
+\begin{itemize}
+    \item una prima fase di apprendimento pratico, tramite lo svolgimento di una serie di 20 laboratori guidati, volti ad acquisire competenze sull'utilizzo e configurazione del prodotto \gls{awaf} della piattaforma \gls{bigip} di \gls{f5};
+    \item una seconda fase autonoma, dedicata all'implementazione concreta della protezione su una \emph{Web Application} scelta dallo studente. In questa fase è stata selezionata l'applicazione vulnerabile \emph{NodeGoat}, su cui sono state applicate policy avanzate di sicurezza tramite il \gls{waf}.
+\end{itemize}
+
+Lo stage ha rappresentato un'opportunità formativa importante per acquisire competenze pratiche nel settore della sicurezza informatica.
+
+\section{Analisi preventiva dei rischi}
+
+Durante la fase di analisi iniziale sono stati individuati alcuni possibili rischi a cui si sarebbe potuto andare incontro. Si è quindi proceduto a elaborare delle possibili soluzioni per far fronte a tali rischi.\\
+
+\begin{risk}{Difficoltà nell'apprendimento e configurazione di un WAF}
+    \riskdescription{La configurazione di un \gls{awaf} come quello di \gls{f5} è complessa e richiede competenze a livello di sicurezza applicativa e a livello di \emph{networking}.}
+    \risksolution{Fase iniziale di formazione tramite laboratori guidati e disponibilità del tutor aziendale per chiarimenti tecnici}
+    \label{risk:learning-waf} 
+\end{risk}
+
+\begin{risk}{Difficoltà nel bilanciare protezione ed esperienza utente}
+    \riskdescription{Configurare policy troppo restrittive nel \gls{waf} avrebbe potuto causare falsi positivi, compromettendo l'esperienza utente legittima.}
+    \risksolution{Iterativo processo di \emph{tuning} delle \gls{policy}: inizialmente in modalità di apprendimento (\emph{transparent mode}), successivo affinamento con \emph{blocking mode} dopo verifica dei log}
+    \label{risk:policy-tuning} 
+\end{risk}
+
+\section{Requisiti e obiettivi}
+
+Il progetto ha previsto i seguenti requisiti e obiettivi, suddivisi per priorità:
+
+\subsection*{Obiettivi obbligatori}
+
+\begin{itemize}
+    \item Analisi e valutazione delle vulnerabilità presenti.
+    \item Configurazione e implementazione del \gls{waf}.
+    \item Esecuzione di \emph{test} e simulazioni di attacchi per verificare l'efficacia delle soluzioni adottate.
+    \item Ottimizzazione delle regole di sicurezza per ridurre i falsi positivi.
+    \item Redazione di una documentazione tecnica che descriva il lavoro svolto e le metodologie adottate
+\end{itemize}
+
+\subsection*{Obiettivi desiderabili}
+
+\begin{itemize}
+    \item Monitoraggio continuo per valutare i progressi e l'efficacia delle soluzioni implementate
+\end{itemize}
+
+\subsection*{Obiettivi facoltativi}
+
+\begin{itemize}
+    \item Configurazione e gestione del \gls{waf} su piattaforme cloud per garantire scalabilità e flessibilità.
+\end{itemize}
+
+\section{Pianificazione}
+
+Lo \emph{stage} ha avuto una durata di 2 mesi, per un totale di circa 300 ore, articolato come segue:
+
+\begin{itemize}
+    \item \textbf{Settimane 1--2}: formazione guidata tramite laboratori pratici con \emph{juice-shop} come \emph{Web Application} di test. In questa fase sono stati esplorati temi quali \gls{bruteforce} attack prevention, bot mitigation, \gls{sqli} protection, \gls{xss} protection, \gls{csrf} prevention, tuning della \gls{policy} e logging avanzato.
+    \item \textbf{Settimana 3 in poi}: configurazione autonoma di un \gls{waf} su \textbf{NodeGoat}, con analisi dei flussi applicativi e applicazione di una protezione personalizzata tramite \gls{awaf}. Sono state definite e testate policy di sicurezza specifiche per la protezione di API REST e per la protezione delle componenti più vulnerabili dell'applicazione.
+\end{itemize}
+
+Durante tutto il progetto sono stati svolti incontri di allineamento con il tutor aziendale per la discussione di eventuali criticità e il monitoraggio dell'avanzamento del lavoro.
+
+\clearpage
+

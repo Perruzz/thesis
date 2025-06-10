@@ -10,38 +10,43 @@
 \chapter{Introduzione}
 \label{cap:1introduzione}
 
-Le applicazioni \emph{web} costituiscono spesso l'anello più esposto all'esterno, e quindi il principale vettore di attacco per attori malevoli intenzionati a sottrarre dati sensibili o a compromettere i sistemi aziendali. In questo contesto, i \gls{waf} rappresentano una soluzione per rafforzare la sicurezza a livello applicativo, proteggendo da attacchi noti come \gls{sqli}, \gls{xss}, \gls{dos} e molti altri.
+Le applicazioni \emph{web} rappresentano spesso l'anello più esposto verso l'esterno e, di conseguenza, il principale punto d'ingresso per attacchi informatici. Per contrastare questo rischio, i \emph{\gls{waf}}\glsfirstoccur costituiscono una valida soluzione a livello applicativo, offrendo protezione contro minacce diffuse come \emph{\gls{sqli}}\glsfirstoccur, \emph{\gls{xss}}\glsfirstoccur, \emph{\gls{dos}}\glsfirstoccur e molte altre vulnerabilità.
 
-Lo \emph{stage} svolto presso \emph{Kirey Group}, della durata di due mesi, ha avuto come obiettivo l'implementazione e l'ottimizzazione di un \gls{waf} a protezione di una \emph{web} application server. Durante questo periodo, ho potuto approfondire in maniera pratica vari aspetti della sicurezza applicativa, configurare \gls{policy} e sperimentare tecniche di \emph{test} e ottimizzazione delle regole di sicurezza.
+Il mio \emph{stage}, svolto presso \emph{Kirey Group} per un periodo di due mesi, ha avuto come obiettivo principale l'implementazione e il perfezionamento di una configurazione di sicurezza capace di proteggere un sistema esposto da traffico malevolo. Questo percorso mi ha permesso di approfondire in modo pratico numerosi aspetti della sicurezza applicativa, dalla definizione delle \emph{\gls{policy}} alla loro verifica e ottimizzazione tramite appositi strumenti di analisi e \emph{test}.
 
-Ho scelto questo progetto di \emph{stage} perché nutro interesse nella \emph{cybersecurity} e aver avuto l'opportunità di lavorare su un prodotto di sicurezza professionale come il \gls{waf} di \gls{f5} è stata particolarmente stimolante.
+Ho scelto questo progetto formativo perché da tempo nutro un forte interesse per il mondo della \emph{cybersecurity}, e poter lavorare direttamente su una tecnologia come il \emph{\gls{waf}} di \gls{f5} si è rivelata un'opportunità stimolante e coerente con i miei obiettivi di crescita.
 
-Durante la prima fase dello \emph{stage}, ho seguito un percorso di formazione strutturato attraverso una serie di laboratori pratici (20 in totale), svolti su una \gls{vm} di \gls{ubuntu} server con ambiente di test rappresentato inizialmente da \emph{Juice Shop}, una nota applicazione vulnerabile usata per il \emph{training} in \emph{cybersecurity}. Tramite questi laboratori ho acquisito competenze pratiche nell'uso di strumenti quali \gls{f5}, \gls{burpsuite}, tecniche di analisi dei \gls{log} e gestione delle \gls{policy}.
+La prima fase dello \emph{stage} si è incentrata su un'attività di formazione pratica, articolata in una serie di laboratori guidati. Questi esercizi mi hanno consentito di acquisire familiarità con le principali funzionalità di un \emph{firewall applicativo}, approfondendo sia le logiche di protezione che la configurazione iniziale delle componenti fondamentali.
 
-A partire dalla terza settimana, ho iniziato la fase di sperimentazione autonoma, scegliendo la web app \emph{NodeGoat} come ambiente \emph{target} da proteggere. In questa fase ho proceduto a configurare il \gls{waf} per difendere l'applicazione da traffico malevolo reale e a validare l'efficacia delle regole implementate.
+Durante i laboratori ho lavorato in un ambiente simulato che riproduceva un'infrastruttura realistica, utilizzando un'applicazione \emph{web} vulnerabile a scopo didattico. Questo contesto mi ha permesso di esercitarmi nell'analisi del traffico, nella definizione delle regole di sicurezza e nella gestione dei relativi \emph{\gls{log}}, sperimentando al contempo l'effetto delle \emph{\gls{policy}} applicate.
+
+Questa fase introduttiva ha costituito le basi per affrontare con autonomia la seconda parte del progetto, in cui ho applicato le competenze acquisite per progettare e realizzare una configurazione di difesa più avanzata.
+
+\newpage
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[height=1.5cm]{kirey_group}
+\end{figure}
+\vspace{-20pt}
 
 \section{L'azienda}
 
-\emph{Kirey Group} è un \emph{system integrator} e fornitore di soluzioni tecnologiche che opera a livello internazionale. Con sede a Padova (Corso Stati Uniti 14/B) e uffici distribuiti in Italia e all'estero, \emph{Kirey Group} offre consulenza, servizi IT e soluzioni personalizzate in ambiti quali \emph{Digital Transformation}, \emph{Cybersecurity}, \emph{Big Data} \& \emph{Analytics}, \emph{Cloud} e \emph{Artificial Intelligence}. Il gruppo collabora con \emph{partner} tecnologici e supporta aziende di diversi settori nell'adozione di tecnologie per migliorare la competitività e la resilienza dei propri sistemi informativi.
-
-Nel contesto del mio \emph{stage}, ho avuto l'opportunità di formarmi sotto la guida del \emph{tutor} aziendale Stefano Marchetti, focalizzandomi sul tema della protezione delle \emph{web application} mediante \gls{waf}.
+\emph{Kirey Group} è un \emph{system integrator} e fornitore di soluzioni tecnologiche che opera a livello internazionale. Con sede a Padova (Corso Stati Uniti 14/B) e uffici distribuiti in Italia e all'estero, \emph{Kirey Group} offre consulenza, servizi \emph{IT} e soluzioni personalizzate in ambiti quali \emph{Digital Transformation}, \emph{Cybersecurity}, \emph{Big Data \& Analytics}, \emph{Cloud} e \emph{Artificial Intelligence}. Il gruppo collabora con \emph{partner} tecnologici e supporta aziende di diversi settori nell'adozione di tecnologie per migliorare la competitività e la resilienza dei propri sistemi informativi.
 
 \section{L'idea}
 
-Il progetto si propone di implementare e configurare un \gls{waf} capace di garantire una protezione contro le principali tipologie di attacco, senza introdurre impatti negativi sulle \emph{performance} delle applicazioni.
+Il progetto si propone di implementare e configurare un \emph{\gls{waf}} capace di garantire una protezione contro le principali tipologie di attacco, senza introdurre impatti negativi sulle \emph{performance} delle applicazioni.
 
-Il lavoro si articola in diverse fasi: analisi delle vulnerabilità, configurazione del \gls{waf} su tecnologia \gls{f5}, \emph{testing} con strumenti come \gls{burpsuite}, ottimizzazione delle regole per ridurre i falsi positivi e implementazione di sistemi di monitoraggio in tempo reale.
-
-La scelta di affrontare questo tema nasce soprattutto dall'interesse personale verso la sicurezza applicativa e dalla volontà di acquisire competenze in crescente richiesta.
+Il lavoro si articola in diverse fasi: analisi delle vulnerabilità, configurazione del \emph{\gls{waf}} su tecnologia \gls{f5}, \emph{testing} con strumenti come \emph{\gls{burpsuite}}, ottimizzazione delle regole per ridurre i falsi positivi e implementazione di sistemi di monitoraggio in tempo reale.
 
 \section{Organizzazione del testo}
 
 \begin{description}
-    \item[{\hyperref[cap:descrizione-stage]{Il secondo capitolo}}] descrive in dettaglio l'organizzazione dello \emph{stage}, il rapporto con l'azienda e la metodologia di lavoro adottata.
+    \item[{\hyperref[cap:descrizione-stage]{Il secondo capitolo}}] descrive in dettaglio l'organizzazione dello \emph{stage}, il rapporto con l'azienda, la metodologia di lavoro adottata e l'analisi dei rischi.
     
-    \item[{\hyperref[cap:analisi-requisiti]{Il terzo capitolo}}] approfondisce l'analisi dei requisiti di sicurezza definiti per il progetto.
+    \item[{\hyperref[cap:analisi-requisiti]{Il terzo capitolo}}] approfondisce l'analisi dei requisiti definiti per il progetto.
     
-    \item[{\hyperref[cap:introduzione-teorica]{Il quarto capitolo}}] presenta i concetti teorici e gli strumenti tecnologici alla base della soluzione \gls{waf} implementata.
+    \item[{\hyperref[cap:introduzione-teorica]{Il quarto capitolo}}] presenta i concetti teorici e gli strumenti tecnologici alla base della soluzione implementata.
     
     \item[{\hyperref[cap:implementazione-risultati]{Il quinto capitolo}}] descrive il lavoro pratico svolto, le problematiche riscontrate e le soluzioni adottate.
         
@@ -50,7 +55,7 @@ La scelta di affrontare questo tema nasce soprattutto dall'interesse personale v
 
 Riguardo la stesura del testo, relativamente al documento sono state adottate le seguenti convenzioni tipografiche:
 \begin{itemize}
-	\item gli acronimi, le abbreviazioni e i termini ambigui o di uso non comune menzionati vengono definiti nel \emph{glossario}, situato alla fine del presente documento;
-	\item per la prima occorrenza dei termini riportati nel \emph{glossario} viene utilizzata la seguente nomenclatura: parola\glsfirstoccur;
+	\item gli acronimi, le abbreviazioni e i termini ambigui o di uso non comune menzionati vengono definiti nel glossario, situato alla fine del presente documento;
+	\item per la prima occorrenza dei termini riportati nel glossario viene utilizzata la seguente nomenclatura: parola\glsfirstoccur;
 	\item i termini in lingua straniera o facenti parti del gergo tecnico sono evidenziati con il carattere \emph{corsivo}.
 \end{itemize}
