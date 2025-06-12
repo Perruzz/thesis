@@ -3,17 +3,112 @@
 
 \intro{Breve introduzione al capitolo}\\
 
+\section{Casi d'uso}
+
+Per lo studio dei casi di utilizzo del prodotto sono stati creati dei diagrammi dei casi d'uso. Essendo il progetto finalizzato alla creazione di un tool per l'automazione di un processo, le interazioni da parte dell'utilizzatore devono essere ovviamente ridotte allo stretto necessario. Per questo motivo i diagrammi d'uso risultano semplici e in numero ridotto.
+
+\begin{usecase}{1}{Analisi delle vulnerabilità delle applicazioni web}
+\usecaseactors{Security Analyst}
+\usecasepre{È disponibile un clone di test delle applicazioni web aziendali}
+\usecasepost{Report con elenco e priorità delle vulnerabilità da mitigare}
+\usecasedesc{
+    \begin{enumerate}
+        \item Avvia scanner (Burp Suite, Qualys ecc.).
+        \item Consolida i risultati e assegna severity.
+        \item Salva il report per alimentare la definizione dei requisiti
+    \end{enumerate}
+}
+\label{uc:analisi-vulnerabilita}
+\end{usecase}
+
+\begin{usecase}{2}{Definizione dei requisiti di sicurezza}
+\usecaseactors{Security Analyst}
+\usecasepre{}
+\usecasepost{}
+\usecasedesc{}
+\label{uc:}
+\end{usecase}
+
+\begin{usecase}{3}{}
+\usecaseactors{Security Analyst}
+\usecasepre{}
+\usecasepost{}
+\usecasedesc{}
+\label{uc:}
+\end{usecase}
+
+\begin{usecase}{0}{}
+\usecaseactors{Security Analyst}
+\usecasepre{}
+\usecasepost{}
+\usecasedesc{}
+\label{uc:}
+\end{usecase}
+
+\begin{usecase}{0}{}
+\usecaseactors{Security Analyst}
+\usecasepre{}
+\usecasepost{}
+\usecasedesc{}
+\label{uc:}
+\end{usecase}
+
+\begin{usecase}{0}{}
+\usecaseactors{Security Analyst}
+\usecasepre{}
+\usecasepost{}
+\usecasedesc{}
+\label{uc:}
+\end{usecase}
+
+\begin{usecase}{0}{}
+\usecaseactors{Security Analyst}
+\usecasepre{}
+\usecasepost{}
+\usecasedesc{}
+\label{uc:}
+\end{usecase}
+
+\begin{usecase}{0}{}
+\usecaseactors{Security Analyst}
+\usecasepre{}
+\usecasepost{}
+\usecasedesc{}
+\label{uc:}
+\end{usecase}
+
+\begin{usecase}{0}{}
+\usecaseactors{Security Analyst}
+\usecasepre{}
+\usecasepost{}
+\usecasedesc{}
+\label{uc:}
+\end{usecase}
+
+\begin{usecase}{0}{}
+\usecaseactors{Security Analyst}
+\usecasepre{}
+\usecasepost{}
+\usecasedesc{}
+\label{uc:}
+\end{usecase}
+
+\begin{usecase}{0}{}
+\usecaseactors{Security Analyst}
+\usecasepre{}
+\usecasepost{}
+\usecasedesc{}
+\label{uc:}
+\end{usecase}
+
 \section{Tracciamento dei requisiti}
 
 Da un'attenta analisi dei requisiti e degli use case effettuata sul progetto è stata stilata la tabella che traccia i requisiti in rapporto agli use case.\\
 Sono stati individuati diversi tipi di requisiti e si è quindi fatto utilizzo di un codice identificativo per distinguerli.\\
-Il codice dei requisiti è così strutturato R(F/Q/V)(N/D/O) dove:
+Il codice dei requisiti è così strutturato R(N/D/O) dove:
 \begin{enumerate}
 	\item[R =] requisito
-    \item[F =] funzionale
-    \item[Q =] qualitativo
-    \item[V =] di vincolo
-    \item[N =] obbligatorio (necessario)
+    \item[O =] obbligatorio (necessario)
     \item[D =] desiderabile
     \item[Z =] opzionale
 \end{enumerate}
