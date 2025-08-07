@@ -19,41 +19,6 @@ html, body {
   touch-action: none;
 }
 
-body::before {
-  content: '';
-  position: absolute;
-  width: 300%;
-  height: 300%;
-  background: radial-gradient(circle at 30% 30%, #00ffccde, #00aaff, #002233);
-  animation: aurora 10s ease-in-out infinite alternate;
-  z-index: -1;
-  opacity: 0.7;
-  filter: blur(100px);
-}
-
-@keyframes aurora {
-  0% {
-    transform: translate(0, 0) scale(1);
-    opacity: 0.6;
-  }
-  25% {
-    transform: translate(-20%, -10%) scale(1.4) rotate(5deg);
-    opacity: 0.85;
-  }
-  50% {
-    transform: translate(10%, -5%) scale(1.2) rotate(-5deg);
-    opacity: 0.75;
-  }
-  75% {
-    transform: translate(-15%, 10%) scale(1.3) rotate(3deg);
-    opacity: 0.9;
-  }
-  100% {
-    transform: translate(0, 0) scale(1.1);
-    opacity: 0.6;
-  }
-}
-
 
 /* Disabilita selezione e trascinamento su tutte le immagini */
 img {
@@ -68,7 +33,7 @@ body::before {
   position: absolute;
   width: 300%;
   height: 300%;
-  background: radial-gradient(circle at 30% 30%, #00ffccde, #00aaff, #002233);
+  background: radial-gradient(circle at 30% 30%, #0b8142f0, #00aaff, #002233);
   animation: aurora 10s ease-in-out infinite alternate;
   z-index: -1;
   opacity: 0.7;
@@ -175,6 +140,7 @@ main {
   pointer-events: none;
 }
 
+
 .yoshi-wrapper.clicked {
   animation: wiggle 0.5s ease;
 }
@@ -234,11 +200,12 @@ main {
   .yoshi-wrapper {
     width: 150px;
     height: 150px;
+    margin-bottom: 50px;
   }
 
   .unipd-logo {
     width: 90px;
-    bottom: 20vh;
+    bottom: 50px;
   }
 
   .github-info {
@@ -258,8 +225,10 @@ main {
     font-size: 1.2rem;
   }
 
+
   main {
     gap: 30px;
+    
   }
 
   .icon-button {
@@ -271,11 +240,15 @@ main {
     width: 100%;
     height: auto;
   }
-  .yoshi-container {
-    top: 42%;
-  }
+
 }
 
 img, button {
   outline: none;
+}
+*:focus {
+  outline: none !important;
+}
+*:focus-visible {
+  outline: none !important;
 }
