@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html, body {
@@ -18,6 +19,11 @@ html, body {
   overscroll-behavior: none;
   touch-action: none;
 }
+img, button {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
 
 
 /* Disabilita selezione e trascinamento su tutte le immagini */
@@ -200,12 +206,12 @@ main {
   .yoshi-wrapper {
     width: 150px;
     height: 150px;
-    margin-bottom: 50px;
+    margin-bottom: 90px;
   }
 
   .unipd-logo {
     width: 90px;
-    bottom: 50px;
+    bottom: 90px;
   }
 
   .github-info {
