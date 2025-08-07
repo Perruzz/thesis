@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: 'Fredoka', sans-serif;
+  color: white;
+  position: relative;
+  background: #000;
+}
+
+/* Aurora animata */
+/* Aurora boreale più veloce e dinamica */
+body::before {
+  content: '';
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle at 30% 30%, #00ffccde, #00aaff, #002233);
+  animation: aurora 10s ease-in-out infinite alternate;
+  z-index: -1;
+  opacity: 0.7;
+  filter: blur(100px);
+}
+
+@keyframes aurora {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translate(-20%, -10%) scale(1.4) rotate(5deg);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translate(10%, -5%) scale(1.2) rotate(-5deg);
+    opacity: 0.75;
+  }
+  75% {
+    transform: translate(-15%, 10%) scale(1.3) rotate(3deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(0, 0) scale(1.1);
+    opacity: 0.6;
+  }
+}
+
+/* Header */
+header {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  right: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.github-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.github-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.github-nick {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+#music-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* Main content */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Pulsante aurora rotante */
+.circle-wrapper {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #00ffaa, #00ccff, #005f5f, #00ffaa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spin 6s linear infinite;
+  box-shadow: 0 0 30px rgba(0,255,255,0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.circle-wrapper:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 50px rgba(0,255,255,0.6);
+}
+
+.circle-text {
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  font-family: 'Fredoka', sans-serif;
+  text-align: center;
+  padding: 10px;
+  z-index: 1;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Animazione uscita */
+@keyframes teleport {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+/* Logo UNIPD */
+.unipd-logo {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  opacity: 0.9;
+}
+
+
+.yoshi-wrapper {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  cursor: pointer;
+  animation: yoshi-idle 5s infinite ease-in-out;
+}
+
+@keyframes yoshi-idle {
+  0%, 10%, 100% { transform: translateY(0); }
+  2% { transform: translateY(-10px); }
+  4% { transform: translateY(0); }
+  6% { transform: translateY(-8px); }
+  8% { transform: translateY(0); }
+}
+
+
+.yoshi-img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.yoshi-wrapper.clicked {
+  animation: wiggle 0.5s ease;
+}
+
+@keyframes wiggle {
+  0%   { transform: translateX(0); }
+  15%  { transform: translateX(-12px); }
+  30%  { transform: translateX(12px); }
+  45%  { transform: translateX(-8px); }
+  60%  { transform: translateX(8px); }
+  75%  { transform: translateX(-4px); }
+  90%  { transform: translateX(4px); }
+  100% { transform: translateX(0); }
+}
+
+
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.icon-img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+.icon-button.clicked .icon-img {
+  animation: bounce 0.3s ease;
+}
+
+@keyframes bounce {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
