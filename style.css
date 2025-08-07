@@ -219,3 +219,53 @@ main {
   50%  { transform: scale(1.2); }
   100% { transform: scale(1); }
 }
+
+@media (max-width: 768px) {
+
+  body {
+    overflow-y: auto;
+    padding: 0 10px;
+  }
+
+  .yoshi-wrapper {
+    width: 150px;
+    height: 150px;
+  }
+
+  .unipd-logo {
+    width: 90px;
+    bottom: 15px;
+  }
+
+  .github-info {
+    gap: 6px;
+  }
+
+  .github-logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .github-nick {
+    font-size: 1rem;
+  }
+
+  #music-toggle {
+    font-size: 1.2rem;
+  }
+
+  main {
+    gap: 30px;
+  }
+
+  .icon-button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .icon-img {
+    width: 100%;
+    height: auto;
+  }
+
+}
