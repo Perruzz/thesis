@@ -7,18 +7,27 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   height: 100vh;
   width: 100vw;
+  max-height: 100vh;
   overflow: hidden;
   font-family: 'Fredoka', sans-serif;
   color: white;
   position: relative;
   background: #000;
+  overscroll-behavior: none;
+  touch-action: none;
 }
 
-/* Aurora animata */
-/* Aurora boreale più veloce e dinamica */
+/* Disabilita selezione e trascinamento su tutte le immagini */
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+/* Aurora boreale animata */
 body::before {
   content: '';
   position: absolute;
@@ -91,7 +100,7 @@ header {
   color: white;
 }
 
-/* Main content */
+/* Main */
 main {
   display: flex;
   flex-direction: column;
@@ -101,47 +110,6 @@ main {
   gap: 40px;
   position: relative;
   z-index: 1;
-}
-
-/* Pulsante aurora rotante */
-.circle-wrapper {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  background: conic-gradient(from 0deg, #00ffaa, #00ccff, #005f5f, #00ffaa);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: spin 6s linear infinite;
-  box-shadow: 0 0 30px rgba(0,255,255,0.3);
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.circle-wrapper:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 50px rgba(0,255,255,0.6);
-}
-
-.circle-text {
-  font-size: 1rem;
-  font-weight: bold;
-  color: white;
-  font-family: 'Fredoka', sans-serif;
-  text-align: center;
-  padding: 10px;
-  z-index: 1;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Animazione uscita */
-@keyframes teleport {
-  0% { transform: scale(1); opacity: 1; }
-  100% { transform: scale(4); opacity: 0; }
 }
 
 /* Logo UNIPD */
@@ -154,13 +122,26 @@ main {
   opacity: 0.9;
 }
 
-
+/* Yoshi egg */
 .yoshi-wrapper {
   width: 200px;
   height: 200px;
   position: relative;
   cursor: pointer;
   animation: yoshi-idle 5s infinite ease-in-out;
+  pointer-events: auto;
+}
+
+.yoshi-img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+  user-select: none;
+  pointer-events: none;
+}
+
+.yoshi-wrapper.clicked {
+  animation: wiggle 0.5s ease;
 }
 
 @keyframes yoshi-idle {
@@ -169,17 +150,6 @@ main {
   4% { transform: translateY(0); }
   6% { transform: translateY(-8px); }
   8% { transform: translateY(0); }
-}
-
-
-.yoshi-img {
-  width: 100%;
-  height: auto;
-  transition: transform 0.3s ease;
-}
-
-.yoshi-wrapper.clicked {
-  animation: wiggle 0.5s ease;
 }
 
 @keyframes wiggle {
@@ -193,8 +163,7 @@ main {
   100% { transform: translateX(0); }
 }
 
-
-
+/* Icona suono */
 .icon-button {
   background: none;
   border: none;
@@ -208,6 +177,7 @@ main {
   width: 100%;
   height: auto;
   transition: transform 0.2s ease;
+  pointer-events: auto;
 }
 
 .icon-button.clicked .icon-img {
@@ -220,10 +190,9 @@ main {
   100% { transform: scale(1); }
 }
 
+/* Responsive */
 @media (max-width: 768px) {
-
   body {
-    overflow-y: auto;
     padding: 0 10px;
   }
 
@@ -267,5 +236,4 @@ main {
     width: 100%;
     height: auto;
   }
-
 }

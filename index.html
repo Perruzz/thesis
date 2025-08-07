@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Tesi - Andrea</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -21,13 +21,12 @@
   <!-- Contenuto principale -->
   <main>
     <div class="yoshi-wrapper" id="yoshi-btn">
-      <img src="asset/egg.png" alt="Yoshi Mario Kart" class="yoshi-img">
+      <img src="asset/egg.png" alt="Yoshi Mario Kart" class="yoshi-img" draggable="false">
     </div>
     <img src="asset/logo-UNIPD-white.png" alt="Logo Università di Padova" class="unipd-logo">
   </main>
 
-
-  <!-- Musica -->
+  <!-- Musica di sfondo -->
   <audio id="bg-music" autoplay loop muted>
     <source src="asset/Main Menu - Mario Kart 8 Deluxe OST.mp3" type="audio/mpeg">
   </audio>
@@ -41,7 +40,7 @@
     const crackSound = new Audio('asset/egg-cracking-6844.mp3');
     const finalSound = new Audio('asset/yoshi-hmmph.mp3');
 
-    finalSound.volume = 1.0; // massimo (valore da 0.0 a 1.0)
+    finalSound.volume = 1.0;
     music.volume = 0.2;
     crackSound.volume = 0.3;
 
@@ -60,26 +59,25 @@
 
     let currentStage = 0;
 
-    // Musica toggle
+    // Pulsante audio
     musicBtn.addEventListener('click', () => {
       music.muted = !music.muted;
-
-      // Aggiungi animazione
       musicBtn.classList.add('clicked');
       setTimeout(() => musicBtn.classList.remove('clicked'), 150);
     });
 
-
-    // Sblocca audio al primo click
+    // Sblocco audio al primo tap
     document.body.addEventListener('click', () => {
       music.muted = false;
       music.volume = 0.2;
       music.play();
     }, { once: true });
 
+    // Gestione click sull'uovo
     yoshiWrapper.addEventListener('click', () => {
       yoshiWrapper.classList.add('clicked');
       setTimeout(() => yoshiWrapper.classList.remove('clicked'), 500);
+
       if (currentStage < eggStages.length - 1) {
         currentStage++;
         yoshiImg.src = eggStages[currentStage];
@@ -93,6 +91,7 @@
       }
     });
 
+    // Effetto flash bianco
     function triggerFlashEffect(callback) {
       const flash = document.createElement('div');
       flash.style.position = 'fixed';
@@ -105,21 +104,16 @@
       flash.style.zIndex = 9999;
       flash.style.transition = 'opacity 1.5s ease-in-out';
       flash.style.pointerEvents = 'none';
-      flash.style.mixBlendMode = 'normal'; // assicura che copra tutto
+      flash.style.mixBlendMode = 'normal';
       document.body.appendChild(flash);
 
       requestAnimationFrame(() => {
         flash.style.opacity = 1;
-
-        // Aspetta che lo schermo sia completamente bianco
         setTimeout(() => {
-          callback(); // es. apertura PDF
-        }, 1600); // 1.5s + margine
+          callback();
+        }, 1600);
       });
-
-
     }
   </script>
-
 </body>
 </html>
