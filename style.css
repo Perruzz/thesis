@@ -206,13 +206,19 @@ main {
   .yoshi-wrapper {
     width: 150px;
     height: 150px;
-    margin-bottom: 150px;
+    margin-bottom: 50px;
   }
 
   .unipd-logo {
+    position: fixed;
+    bottom: calc(20px + env(safe-area-inset-bottom));
     width: 90px;
-    bottom: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    pointer-events: none;
   }
+
 
   .github-info {
     gap: 6px;
@@ -257,4 +263,10 @@ img, button {
 }
 *:focus-visible {
   outline: none !important;
+}
+
+@supports not (bottom: env(safe-area-inset-bottom)) {
+  .unipd-logo {
+    bottom: 20px;
+  }
 }
