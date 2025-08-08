@@ -1,119 +1,30 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Tesi - Andrea</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- Header -->
-  <header>
-    <div class="github-info">
-      <img src="https://avatars.githubusercontent.com/u/148521685?v=4" alt="Logo GitHub" class="github-logo">
-      <span class="github-nick">Perruzz</span>
-    </div>
-    <button id="music-toggle" class="icon-button">
-      <img src="asset/sound.png" alt="Suono" class="icon-img">
-    </button>
-  </header>
-
-  <!-- Contenuto principale -->
-  <main>
-    <div class="yoshi-wrapper" id="yoshi-btn">
-      <img src="asset/egg.png" alt="Yoshi Mario Kart" class="yoshi-img" draggable="false">
-    </div>
-    <img src="asset/logo-UNIPD-white.png" alt="Logo Università di Padova" class="unipd-logo">
-  </main>
-
-  <!-- Musica di sfondo -->
-  <audio id="bg-music" autoplay loop muted>
-    <source src="asset/Main Menu - Mario Kart 8 Deluxe OST.mp3" type="audio/mpeg">
-  </audio>
-
-  <script>
-    const music = document.getElementById('bg-music');
-    const musicBtn = document.getElementById('music-toggle');
-    const yoshiWrapper = document.getElementById('yoshi-btn');
-    const yoshiImg = yoshiWrapper.querySelector('img');
-
-    const crackSound = new Audio('asset/egg-cracking-6844.mp3');
-    const finalSound = new Audio('asset/yoshi-hmmph.mp3');
-
-    finalSound.volume = 1.0;
-    music.volume = 0.2;
-    crackSound.volume = 0.3;
-
-    const eggStages = [
-      'asset/egg.png',
-      'asset/eggcrack1.png',
-      'asset/eggcrack2.png',
-      'asset/eggcrack3.png',
-      'asset/eggcrack4.png',
-      'asset/eggcrack5.png',
-      'asset/eggcrack6.png',
-      'asset/eggcrack7.png',
-      'asset/eggcrack8.png',
-      'asset/eggcrack9.png'
-    ];
-
-    let currentStage = 0;
-
-    // Pulsante audio
-    musicBtn.addEventListener('click', () => {
-      music.muted = !music.muted;
-      musicBtn.classList.add('clicked');
-      setTimeout(() => musicBtn.classList.remove('clicked'), 150);
-    });
-
-    // Sblocco audio al primo tap
-    document.body.addEventListener('click', () => {
-      music.muted = false;
-      music.volume = 0.2;
-      music.play();
-    }, { once: true });
-
-    // Gestione click sull'uovo
-    yoshiWrapper.addEventListener('click', () => {
-      yoshiWrapper.classList.add('clicked');
-      setTimeout(() => yoshiWrapper.classList.remove('clicked'), 500);
-
-      if (currentStage < eggStages.length - 1) {
-        currentStage++;
-        yoshiImg.src = eggStages[currentStage];
-        crackSound.currentTime = 0;
-        crackSound.play();
-      } else {
-        finalSound.play();
-        triggerFlashEffect(() => {
-          window.location.href = "thesis.pdf";
-        });
-      }
-    });
-
-    // Effetto flash bianco
-    function triggerFlashEffect(callback) {
-      const flash = document.createElement('div');
-      flash.style.position = 'fixed';
-      flash.style.top = 0;
-      flash.style.left = 0;
-      flash.style.width = '100vw';
-      flash.style.height = '100vh';
-      flash.style.backgroundColor = 'white';
-      flash.style.opacity = 0;
-      flash.style.zIndex = 9999;
-      flash.style.transition = 'opacity 1.5s ease-in-out';
-      flash.style.pointerEvents = 'none';
-      flash.style.mixBlendMode = 'normal';
-      document.body.appendChild(flash);
-
-      requestAnimationFrame(() => {
-        flash.style.opacity = 1;
-        setTimeout(() => {
-          callback();
-        }, 1600);
-      });
-    }
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tesi - Andrea</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="github-info">
+        <img src="https://avatars.githubusercontent.com/u/148521685?v=4" alt="Logo GitHub" class="github-logo">
+        <span class="github-nick">Perruzz</span>
+      </div>
+      <button id="music-toggle" class="icon-button">
+        <img src="asset/sound.png" alt="Suono" class="icon-img">
+      </button>
+    </header>
+    <main>
+      <div class="yoshi-wrapper" id="yoshi-btn">
+        <img src="asset/egg.png" alt="Yoshi Mario Kart" class="yoshi-img" draggable="false">
+      </div>
+      <img src="asset/logo-UNIPD-white.png" alt="Logo Università di Padova" class="unipd-logo">
+    </main>
+    <audio id="bg-music" autoplay loop muted>
+      <source src="asset/Main Menu - Mario Kart 8 Deluxe OST.mp3" type="audio/mpeg">
+    </audio>
+  </body>
 </html>
