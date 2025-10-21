@@ -83,4 +83,19 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 1600);
         });
     }
+
+    document.addEventListener('contextmenu', (e) => {
+      if (e.target.matches('img')) {
+        e.preventDefault();
+      }
+    });
+
+    document.addEventListener('touchstart', (e) => {
+      if (e.target.matches('img')) {
+        clearTimeout(window._pressTimer);
+        window._pressTimer = setTimeout(() => e.preventDefault(), 200);
+      }
+    });
+
+    document.addEventListener('touchend', () => clearTimeout(window._pressTimer));
 });
